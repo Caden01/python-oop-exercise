@@ -1,0 +1,9 @@
+# Colors
+blue
+pink
+yellow
+
+# Names
+caden
+jacob
+pam

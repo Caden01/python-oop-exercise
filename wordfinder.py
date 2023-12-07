@@ -31,3 +31,22 @@ class WordFinder:
         """Chooses a random word from the list of words."""
 
         return random.choice(self.words)
+
+class SpecialWordFinder(WordFinder) :
+    """Addition to word finder that ignores comments
+    
+    >>> special_word_finder = SpecialWordFinder("morewords.txt")
+    6 words read.
+
+    >>> special_word_finder.random() in ["blue", "pink", "yellow", "caden", "jacob", "pam"]
+    True
+
+    """
+
+    def parse(self, file) :
+        lst = []
+        for word in file: 
+            if word.strip() and not word.startswith("#") :
+                lst.append(word.strip())
+
+        return lst
